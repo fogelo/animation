@@ -1,1 +1,11 @@
-webdesign/paralax/ready
+.gitignore
+webdesign/mouse-paralax/ready
+webdesign/paralax/.DS_Store
+adaptive-images/images/ready
+
+
+
+
+.DS_Store
+webdesign/.DS_Store
+
