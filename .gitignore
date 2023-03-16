@@ -1,6 +1,8 @@
 .gitignore
 webdesign/mouse-paralax/ready
 webdesign/paralax/.DS_Store
+webdesign/draggable-site/ready
+
 adaptive-images/images/ready
 
 
@@ -8,4 +10,5 @@ adaptive-images/images/ready
 
 .DS_Store
 webdesign/.DS_Store
+
 
