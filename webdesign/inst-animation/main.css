@@ -1,0 +1,160 @@
+:root {
+  --accent: orange;
+
+  --origin: 135deg;
+  --color1: hwb(252 21% 19%);
+  --color2: #e833f9;
+  --color3: #de005e;
+  --color4: #ffbb54;
+
+  --box_h: 200px;
+  --view_h: calc(var(--box_h) * 10);
+  --duration: 5s;
+}
+
+/* ============================================================ */
+.rect {
+  width: 150px;
+  height: 150px;
+  background: violet;
+  margin: 100px;
+  animation: rotate 1s ease-in-out 1s infinite alternate;
+  animation-name: rotate;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1s;
+  animation-iteration-count: 2; /* infinite может быть*/
+  animation-direction: alternate;
+}
+.rect:hover {
+  animation-play-state: paused;
+}
+
+@keyframes rotate {
+  0% {
+    border-radius: 0 0 0 0;
+    transform: rotate(0deg);
+  }
+  25% {
+    border-radius: 50% 0 0 0;
+    transform: rotate(45deg);
+  }
+  50% {
+    border-radius: 50% 50% 0 0;
+    transform: rotate(90deg);
+  }
+  75% {
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(135deg);
+  }
+  100% {
+    border-radius: 50% 50% 50% 50%;
+    transform: rotate(180deg);
+  }
+}
+/* ============================================================ */
+
+/* ============================================================ */
+.box {
+  height: var(--box_h);
+  width: var(--box_h);
+  overflow: hidden;
+  border-radius: 35px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+.box::after {
+  content: "";
+  position: relative;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--view_h);
+  background: linear-gradient(
+    var(--origin),
+    var(--color1) 0%,
+    var(--color2) 25%,
+    var(--color3) 50%,
+    var(--color2) 75%,
+    var(--color1) 100%
+  );
+  animation: animatebg var(--duration) infinite;
+}
+
+@keyframes animatebg {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: calc((var(--view_h) - var(--box_h)) * -1);
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.logo > div {
+  position: absolute;
+  border: 9px solid #fff;
+  z-index: 1;
+}
+
+.logo-border {
+  height: 74%;
+  width: 74%;
+  border-radius: 35px;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.logo-circle {
+  height: 44%;
+  width: 44%;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  border-radius: 50%;
+}
+.logo-dot {
+  height: 1px;
+  width: 1px;
+  top: 20%;
+  left: 70%;
+  border-radius: 50%;
+}
+
+@keyframes animatebox {
+  0% {
+    transform: scale(0);
+    /* border-radius: 35px; */
+  }
+  10% {
+    transform: scale(1.1);
+    border-radius: 50%;
+  }
+  15% {
+    transform: scale(1);
+    border-radius: 35px;
+  }
+  96% {
+    transform: scale(1);
+    border-radius: 35px;
+  }
+  98% {
+    transform: scale(1.1);
+    border-radius: 50%;
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+.box {
+  transform: scale(0);
+  animation: animatebox calc(var(--duration) * 2) infinite;
+}
+
+/* ============================================================ */
