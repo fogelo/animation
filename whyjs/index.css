@@ -1,0 +1,23 @@
+body {
+    font-size: 25px;
+}
+
+.firstclass {
+    /* display: inline-block; */
+
+}
+
+.ourclass {
+    color: red;
+    transform: translateX(50%);
+    transition: color 3s, transform 3s;
+}
+.ourclass-0 {
+    color: rgb(204, 255, 0);
+}
+.ourclass-1 {
+    color: rgb(46, 9, 168);
+}
+.ourclass-2 {
+    color: rgb(255, 0, 230);
+}
